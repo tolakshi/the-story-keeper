@@ -1,11 +1,11 @@
 ﻿
-<h4>Search for Books</h4>
+<h1>Search for Books</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ShowSearchBook">
             <div class="form-group">
-                <label for="BookSearchString" class="control-label"></label>
+                <label for="BookSearchString" class="control-label">Enter a book name or a part of it</label>
                 <input name="BookSearchString" class="form-control" />
             </div>
             <div class="form-group mt-3">
@@ -16,5 +16,5 @@
 </div>
 
 <div class="mt-2">
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>

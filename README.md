@@ -34,7 +34,7 @@ On the top navigation bar click the link `Search`. Type the book name or a part 
 
 ### Reserve a book
 
-On the list view (Books), find the action `Edit` for the relavant book you want to reserve and uncheck the field `Is available?`. This will generate a booking number for the reservation made.
+On the list view (Books), find the action `Edit` for the relavant book you want to reserve and uncheck the field `Is reserved?`. This will generate a booking number for the reservation made.
 
 ## Asumptions
 
