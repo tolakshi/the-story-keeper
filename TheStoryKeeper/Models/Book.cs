@@ -24,7 +24,7 @@ namespace TheStoryKeeper.Models
         [Display(Name = "Book Name")]
         public string BookName { get; set; }
 
-        [Display(Name = "Is Available?")]
+        [Display(Name = "Is Reserved?")]
         public bool BookAvailability { get; set; }
 
         [AllowNull]
