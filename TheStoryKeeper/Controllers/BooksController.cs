@@ -68,7 +68,7 @@ namespace TheStoryKeeper.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AutoId,BookId,BookName,BookAvailability")] Book book)
+        public async Task<IActionResult> Create([Bind("AutoId,BookId,BookName,BookAvailability,OrderNumber")] Book book)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace TheStoryKeeper.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AutoId,BookId,BookName,BookAvailability")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("AutoId,BookId,BookName,BookAvailability,OrderNumber")] Book book)
         {
             if (id != book.AutoId)
             {
