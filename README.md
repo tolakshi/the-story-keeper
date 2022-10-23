@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Story Keeper solution is a full stack ASP.net project designed to help manage items of a book store. The solution supports the following funcions,
+The Story Keeper solution is a full stack ASP.net project designed to help manage items of a book store. The solution supports the following functions,
 
 * Viewing the list of books in the store
 * Holds book details such as book title, ISBN and availability.
@@ -16,7 +16,7 @@ The Story Keeper solution is a full stack ASP.net project designed to help manag
 As initial security measures,
 
 * HTTPS is configured so the transfer between the client and the server is secured by `https`.
-* Create, Edit and Delete operations can be performed only by a loged in user.
+* Create, Edit and Delete operations can be performed only by a logged-in users.
 
 ## Building and Running the Solution
 
@@ -47,3 +47,4 @@ On the list view (Books), find the action `Edit` for the relavant book you want 
 
 * Functionality to track the booking against each customer can be added.
 * Book inventory tracking could be added.
+* Unit test harnesses can be added.
