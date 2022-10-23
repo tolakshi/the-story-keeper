@@ -25,6 +25,18 @@ namespace TheStoryKeeper.Controllers
               return View(await _context.Book.ToListAsync());
         }
 
+        // GET: Books/SearchBook
+        public async Task<IActionResult> SearchBook()
+        {
+            return View();
+        }
+
+        // POST: Books/SearchBook
+        public async Task<IActionResult> ShowSearchBook(string BookSearchString)
+        {
+            return View(await _context.Book.Where( j => j.BookName.Contains(BookSearchString)).ToListAsync());
+        }
+
         // GET: Books/Details/5
         public async Task<IActionResult> Details(int id)
         {
