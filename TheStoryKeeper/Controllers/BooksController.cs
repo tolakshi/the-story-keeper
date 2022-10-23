@@ -26,15 +26,15 @@ namespace TheStoryKeeper.Controllers
         }
 
         // GET: Books/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.Book == null)
+            if (id < 0 || _context.Book == null)
             {
                 return NotFound();
             }
 
             var book = await _context.Book
-                .FirstOrDefaultAsync(m => m.BookId == id);
+                .FirstOrDefaultAsync(m => m.AutoId == id);
             if (book == null)
             {
                 return NotFound();
@@ -66,9 +66,9 @@ namespace TheStoryKeeper.Controllers
         }
 
         // GET: Books/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null || _context.Book == null)
+            if (id < 0 || _context.Book == null)
             {
                 return NotFound();
             }
@@ -86,9 +86,9 @@ namespace TheStoryKeeper.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("AutoId,BookId,BookName,BookAvailability")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("AutoId,BookId,BookName,BookAvailability")] Book book)
         {
-            if (id != book.BookId)
+            if (id != book.AutoId)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace TheStoryKeeper.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BookExists(book.BookId))
+                    if (!BookExists(book.AutoId))
                     {
                         return NotFound();
                     }
@@ -117,15 +117,15 @@ namespace TheStoryKeeper.Controllers
         }
 
         // GET: Books/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null || _context.Book == null)
+            if (id < 0 || _context.Book == null)
             {
                 return NotFound();
             }
 
             var book = await _context.Book
-                .FirstOrDefaultAsync(m => m.BookId == id);
+                .FirstOrDefaultAsync(m => m.AutoId == id);
             if (book == null)
             {
                 return NotFound();
@@ -137,7 +137,7 @@ namespace TheStoryKeeper.Controllers
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Book == null)
             {
@@ -153,9 +153,9 @@ namespace TheStoryKeeper.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BookExists(string id)
+        private bool BookExists(int id)
         {
-          return _context.Book.Any(e => e.BookId == id);
+          return _context.Book.Any(e => e.AutoId == id);
         }
     }
 }

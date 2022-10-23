@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<TheStoryKeeper.Models.Book>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "All In Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>All In Shop</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AutoId)
+                @Html.DisplayNameFor(model => model.BookId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.BookName)
@@ -28,7 +29,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AutoId)
+                @Html.DisplayFor(modelItem => item.BookId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BookName)
@@ -37,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.BookAvailability)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.AutoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AutoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AutoId">Delete</a>
             </td>
         </tr>
 }

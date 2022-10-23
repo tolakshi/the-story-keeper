@@ -20,17 +20,15 @@ namespace TheStoryKeeper.Models
 
         [Required]
         [MaxLength(250)]
+        [Display(Name = "Book Name")]
         public string BookName { get; set; }
 
         [Display(Name = "Is Available?")]
         public bool BookAvailability { get; set; }
 
-        public Book(int autoId, string bookId, string bookName, bool bookAvailability)
+        public Book()
         {
-            AutoId = autoId;
-            BookId = bookId;
-            BookName = bookName;
-            BookAvailability = bookAvailability;
+
         }
     }
 }
