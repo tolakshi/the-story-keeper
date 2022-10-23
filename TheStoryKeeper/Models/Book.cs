@@ -28,7 +28,7 @@ namespace TheStoryKeeper.Models
         public bool BookAvailability { get; set; }
 
         [AllowNull]
-        [MaxLength(15)]
+        [MaxLength(50)]
         [Display(Name = "Order Number")]
         public string OrderNumber { get; set; }
 

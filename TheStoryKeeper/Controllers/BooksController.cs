@@ -72,6 +72,14 @@ namespace TheStoryKeeper.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (book.BookAvailability)
+                {
+                    book.OrderNumber = Guid.NewGuid().ToString();
+                }
+                else 
+                {
+                    book.OrderNumber = "";
+                }
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -112,6 +120,14 @@ namespace TheStoryKeeper.Controllers
             {
                 try
                 {
+                    if (book.BookAvailability)
+                    {
+                        book.OrderNumber = Guid.NewGuid().ToString();
+                    }
+                    else
+                    {
+                        book.OrderNumber = "";
+                    }
                     _context.Update(book);
                     await _context.SaveChangesAsync();
                 }
